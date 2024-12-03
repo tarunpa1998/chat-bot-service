@@ -34,7 +34,7 @@
           View on GitHub →
         </a>
       </div>
-    </div>
+    </div>    
   </div>
 </template>
 

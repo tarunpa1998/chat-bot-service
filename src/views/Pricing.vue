@@ -9,21 +9,21 @@
         <p class="text-4xl font-bold mb-4">${{ plan.price }}<span class="text-sm text-gray-500">/mo</span></p>
         <ul class="space-y-3 mb-8 flex-grow">
           <li v-for="feature in plan.features" :key="feature" class="flex items-center">
-            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="h-5 w-5 text-primary-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
             {{ feature }}
           </li>
         </ul>
-        <button class="w-full bg-indigo-600 text-white rounded-lg py-2 hover:bg-indigo-700">
-          Get Started
-        </button>
+        <CustomButton :text="'Get Started'" :full-width="true" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import CustomButton from '../components/CustomButton.vue';
+
 const plans = [
   {
     name: 'Starter',

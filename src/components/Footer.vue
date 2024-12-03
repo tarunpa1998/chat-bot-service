@@ -30,9 +30,11 @@
         </div>
         
         <div>
-          <button class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
-            Create Your Bot
-          </button>
+          <CustomButton
+          text="Create Your Bot"
+          @click="handleCreateBot"
+          
+        />
         </div>
       </div>
       
@@ -42,3 +44,11 @@
     </div>
   </footer>
 </template>
+<script setup lang="ts">
+import CustomButton from './CustomButton.vue';
+
+const handleCreateBot = () => {
+  // Add your logic for creating a bot here
+  console.log('Create Your Bot clicked');
+};
+</script>

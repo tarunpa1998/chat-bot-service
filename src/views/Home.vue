@@ -9,11 +9,24 @@
           Get instant answers to your questions with our advanced AI chatbot. Available 24/7 to assist you.
         </p>
         <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-          <div class="rounded-md shadow">
-            <button @click="startChat" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-              Start Chat
-            </button>
-          </div>
+          <CustomButton @click="startChat">Start Chat</CustomButton>
+        </div>
+      </div>
+    </ScrollReveal>
+
+<ScrollReveal>
+      <div class="mt-16 flex justify-center">
+        <div class="w-full max-w-8xl">
+          <video
+            class="w-full rounded-lg shadow-lg"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="/assets/videos/demo_bot.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </ScrollReveal>
@@ -24,6 +37,7 @@
         <InteractionTool />
       </div>
     </ScrollReveal>
+
 
     <ScrollReveal>
       <div class="mt-16">
@@ -92,6 +106,7 @@ import { ref } from 'vue';
 import InteractionTool from './InteractionTool.vue';
 import ScrollingPlatformIcons from '../components/ScrollingPlatformIcons.vue';
 import ScrollReveal from '../components/ScrollReveal.vue';
+import CustomButton from '../components/CustomButton.vue'; // Add this import
 
 const services = ref([
   { title: '24/7 Support', description: 'Get help anytime, anywhere with our AI-powered chatbot.' },

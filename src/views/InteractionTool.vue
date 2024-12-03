@@ -1,4 +1,5 @@
 <template>
+    
     <div class="interaction-tool grid grid-cols-1 lg:grid-cols-2 gap-4 p-4">
       
       <div class="form-section bg-white rounded-xl shadow-md overflow-hidden p-8 border border-transparent">

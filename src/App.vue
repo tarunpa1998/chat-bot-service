@@ -18,9 +18,10 @@
           </div>
           <div class="flex items-center space-x-4">
             <router-link to="/login" class="text-gray-600 hover:text-gray-900">Sign In</router-link>
-            <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-200">
-              Create Chat Bot
-            </button>
+            <CustomButton 
+               text="Create Chat Bot" 
+                 @click="handleCreateChatBot"
+                        />
           </div>
         </div>
       </div>
@@ -45,8 +46,15 @@ import ChatWidget from './components/ChatWidget.vue';
 import NavigationMenu from './components/navigation/NavigationMenu.vue';
 import BreathingBackground from './components/BreathingBackground.vue';
 import Footer from './components/Footer.vue';
+import CustomButton from './components/CustomButton.vue';
+import HoverMenu from './components/navigation/HoverMenu.vue';
 
 const showChat = ref(true);
+
+const handleCreateChatBot = () => {
+  // Will add my logic for creating a chat bot here
+  console.log('Create Chat Bot clicked');
+};
 </script>
 
 <style>

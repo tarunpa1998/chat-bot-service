@@ -7,7 +7,7 @@
       </svg>
     </button>
     
-    <div v-if="isOpen" class="absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+    <div v-if="isOpen" class="absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-none ring-1 ring-black ring-opacity-5">
       <div class="py-1">
         <a href="https://github.com/your-org" target="_blank" class="menu-item">
           GitHub Repository
@@ -31,6 +31,6 @@ const toggleDropdown = () => {
 
 <style scoped>
 .menu-item {
-  @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900;
+  @apply block px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 hover:text-gray-900;
 }
 </style>

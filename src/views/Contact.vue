@@ -38,12 +38,13 @@
               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             ></textarea>
           </div>
-          <button
+          <CustomButton 
             type="submit"
-            class="w-full bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
+            :full-width="true"
+            color="indigo"
           >
             Send Message
-          </button>
+          </CustomButton>
         </form>
       </div>
 
@@ -73,6 +74,7 @@
 import { ref, onMounted } from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import CustomButton from '../components/CustomButton.vue';
 
 const mapContainer = ref<HTMLElement | null>(null);
 const form = ref({
