@@ -38,22 +38,21 @@ library.add(
 );
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', component: Home },
-    { path: '/about', component: About },
-    { path: '/contact', component: Contact },
-    { path: '/resources', component: Resources },
-    { path: '/pricing', component: Pricing },
-    { path: '/resources/blog', component: Resources },
-    { path: '/resources/docs', component: Resources },
-    { path: '/resources/community', component: Resources }
+    { path: '/', name: 'home', component: Home },
+    { path: '/about', name: 'about', component: About },
+    { path: '/contact', name: 'contact', component: Contact },
+    { path: '/pricing', name: 'pricing', component: Pricing },
+    { path: '/resources', name: 'resources', component: Resources },
+    { path: '/resources/blog', name: 'blog', component: Resources },
+    { path: '/resources/docs', name: 'docs', component: Resources },
+    { path: '/resources/community', name: 'community', component: Resources }
   ]
 });
 
 const pinia = createPinia();
 const app = createApp(App);
-
 
 app.component('ScrollReveal', ScrollReveal);
 app.component('font-awesome-icon', FontAwesomeIcon);

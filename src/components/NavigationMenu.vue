@@ -12,7 +12,7 @@
         <a href="https://github.com/your-org" target="_blank" class="menu-item">
           GitHub Repository
         </a>
-        <router-link to="/resources/blog" class="menu-item">Blog</router-link>
+        <router-link to="/resources/blog" class="menu-item">Bloog</router-link>
         <router-link to="/resources/docs" class="menu-item">Documentation</router-link>
         <router-link to="/resources/community" class="menu-item">Community Forum</router-link>
       </div>

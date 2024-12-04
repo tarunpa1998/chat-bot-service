@@ -1,17 +1,18 @@
 <template>
-  <nav class="hidden md:flex space-x-8">
+  <nav class="hidden md:flex justify-center items-center space-x-8">
+    <HoverMenu title="About" to="/about" />
+    <HoverMenu title="Pricing" to="/pricing" />
+    <HoverMenu title="Contact" to="/contact" />
     <HoverMenu title="Resources">
-      <template #default>
-        <a 
-          v-for="item in menuItems" 
-          :key="item.label"
-          :href="item.href"
-          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-          :target="item.external ? '_blank' : undefined"
-        >
-          {{ item.label }}
-        </a>
-      </template>
+      <a 
+        v-for="item in menuItems" 
+        :key="item.label"
+        :href="item.href"
+        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+        :target="item.external ? '_blank' : undefined"
+      >
+        {{ item.label }}
+      </a>
     </HoverMenu>
   </nav>
 
