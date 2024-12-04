@@ -13,10 +13,12 @@
             <NavigationMenu />
           </div>
           <div class="flex items-center space-x-4">
-            <router-link to="/login" class="text-gray-600 hover:text-gray-900">Sign In</router-link>
+            <router-link to="/login" class="sign-in-button">Sign In</router-link>
             <CustomButton 
               text="Create Chat Bot" 
+              hoverText="Start For Free"
               @click="handleCreateChatBot"
+              class="fixed-width-button"
             />
           </div>
         </div>
@@ -68,5 +70,18 @@ const handleCreateChatBot = () => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.sign-in-button {
+  @apply text-gray-600 px-4 py-2 rounded-md transition-colors duration-200;
+}
+
+.sign-in-button:hover {
+  color: white;
+  background-color: #11b9a6;
+}
+
+.fixed-width-button {
+  width: 200px; /* Set a fixed width to prevent shifting */
 }
 </style>

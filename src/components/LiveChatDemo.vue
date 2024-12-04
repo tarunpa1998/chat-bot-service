@@ -5,7 +5,7 @@
       <div v-for="(message, index) in messages" :key="index" class="mb-2">
         <div :class="message.type === 'bot' ? 'text-left' : 'text-right'">
           <span :class="[
-            message.type === 'bot' ? 'bg-gray-200' : 'bg-blue-500 text-white',
+            message.type === 'bot' ? 'bg-gray-200' : 'bg-primary-600 text-white',
             {'animate-fade-in': message.type === 'user'}
           ]" class="inline-block px-4 py-2 rounded-lg">
             <template v-if="message.text.toLowerCase().includes('hi') || message.text.toLowerCase().includes('hello')">
@@ -24,8 +24,14 @@
       </div>
     </div>
     <div v-if="currentStep === 0">
-      <button @click="sendHello" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full animate-pulse hover:animate-none transition-all duration-300 transform hover:scale-105">Say Hi 👋</button>
-    </div>
+  <button 
+    @click="sendHello" 
+    class="text-white px-4 py-4 rounded-md w-full animate-pulse hover:animate-none transition-all duration-300 transform hover:scale-75"
+    style="background-color: var(--primary-600);" 
+  >
+    Say Hi 👋
+  </button>
+</div>
     <div v-else-if="currentStep < steps.length">
       <p class="mb-2">{{ steps[currentStep].prompt }}</p>
       <input 
@@ -34,7 +40,13 @@
         :placeholder="steps[currentStep].placeholder"
         class="w-full px-3 py-2 border rounded-md mb-2"
       />
-      <button @click="handleInput" class="bg-blue-500 text-white px-4 py-2 rounded-md">Send</button>
+      <button 
+  @click="handleInput" 
+  class="text-white px-4 py-2 rounded-md" 
+  style="background-color: var(--primary-600);"
+>
+  Send
+</button>
     </div>
   </div>
 </template>

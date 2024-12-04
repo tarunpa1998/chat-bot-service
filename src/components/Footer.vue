@@ -30,9 +30,11 @@
         </div>
         
         <div>
-          <CustomButton
-          text="Create Your Bot"
-          @click="handleCreateBot"
+          <CustomButton 
+              text="Create Chat Bot" 
+              hoverText="Start For Free"
+              @click="handleCreateChatBot"
+            
           
         />
         </div>

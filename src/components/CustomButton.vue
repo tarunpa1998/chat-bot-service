@@ -6,6 +6,8 @@
       customClass
     ]"
     @click="handleClick"
+    @mouseover="hovering = true"
+    @mouseleave="hovering = false"
     style="background-color: #e8edf3;"
   >
     <span class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-primary group-hover:h-full"></span>
@@ -20,13 +22,13 @@
       </svg>
     </span>
     <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
-      <slot>{{ text }}</slot>
+      <slot>{{ hovering ? hoverText : text }}</slot>
     </span>
   </a>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
+import { defineProps, defineEmits, ref } from 'vue';
 
 const props = defineProps({
   href: {
@@ -37,6 +39,10 @@ const props = defineProps({
     type: String,
     default: 'Button'
   },
+  hoverText: {
+    type: String,
+    default: ''
+  },
   customClass: {
     type: String,
     default: ''
@@ -44,6 +50,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['click']);
+const hovering = ref(false);
 
 const handleClick = (event: Event) => {
   if (props.href === '#_') {
