@@ -2,7 +2,12 @@
   <div class="form-section bg-none rounded-xl shadow-none overflow-hidden">
     <h2 class="text-xl font-bold mb-4">Live Chat Demo</h2>
     <div class="chat-messages mb-4" ref="chatContainer">
-      <div v-for="(message, index) in messages" :key="index" class="mb-2">
+      <div v-for="(message, index) in messages" :key="index" class="mb-2 flex items-center" :class="message.type === 'bot' ? 'flex-row' : 'flex-row-reverse'">
+        <img 
+          :src="message.type === 'bot' ? '/assets/Images/customer-care_12096356.png' : '/path/to/user-profile.jpg'"
+          alt="Profile Picture" 
+          class="w-8 h-8 rounded-full mx-2"
+        />
         <div :class="message.type === 'bot' ? 'text-left' : 'text-right'">
           <span :class="[
             message.type === 'bot' ? 'bg-gray-200' : 'bg-primary-600 text-white',
@@ -24,29 +29,29 @@
       </div>
     </div>
     <div v-if="currentStep === 0">
-  <button 
-    @click="sendHello" 
-    class="text-white px-4 py-4 rounded-md w-full animate-pulse hover:animate-none transition-all duration-300 transform hover:scale-75"
-    style="background-color: var(--primary-600);" 
-  >
-    Say Hi 👋
-  </button>
-</div>
+      <button 
+        @click="sendHello" 
+        class="text-white px-4 py-4 rounded-md w-full animate-pulse hover:animate-none transition-all duration-300 transform hover:scale-75"
+        style="background-color: var(--primary-600);" 
+      >
+        Say Hi 👋
+      </button>
+    </div>
     <div v-else-if="currentStep < steps.length">
       <p class="mb-2">{{ steps[currentStep].prompt }}</p>
       <input 
         v-model="userInput" 
         @keyup.enter="handleInput"
-        :placeholder="steps[currentStep].placeholder"
+        placeholder="Enter your text here"
         class="w-full px-3 py-2 border rounded-md mb-2"
       />
       <button 
-  @click="handleInput" 
-  class="text-white px-4 py-2 rounded-md" 
-  style="background-color: var(--primary-600);"
->
-  Send
-</button>
+        @click="handleInput" 
+        class="text-white px-4 py-2 rounded-md" 
+        style="background-color: var(--primary-600);"
+      >
+        Send
+      </button>
     </div>
   </div>
 </template>
@@ -60,11 +65,11 @@ const messages = ref([
 ]);
 
 const steps = [
-  { prompt: "Click 'Say Hi 👋' to start the conversation!", placeholder: "" },
-  { prompt: "Great! May I know your name please?", placeholder: "Enter your name..." },
-  { prompt: "What's your email address?", placeholder: "Enter your email..." },
-  { prompt: "What service do you need?", placeholder: "e.g., Sales, Support, Marketing" },
-  { prompt: "Can you tell me more about your specific needs?", placeholder: "Describe your needs..." },
+  { prompt: "Click 'Say Hi 👋' to start the conversation!",  },
+  { prompt: "Great! May I know your name please?", },
+  { prompt: "What's your email address?", },
+  { prompt: "What service do you need?", },
+  { prompt: "Can you tell me more about your specific needs?", },
 ];
 
 const currentStep = ref(0);
@@ -139,7 +144,6 @@ function handleInput() {
 </script>
 
 <style scoped>
-
 .chat-messages {
   max-height: 300px;
   overflow-y: auto;

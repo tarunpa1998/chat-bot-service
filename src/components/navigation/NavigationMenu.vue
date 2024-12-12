@@ -20,7 +20,7 @@
   <div class="md:hidden">
     <button 
       @click="isMobileMenuOpen = !isMobileMenuOpen"
-      class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+      class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-transform duration-300"
     >
       <span class="sr-only">Open main menu</span>
       <svg
@@ -28,6 +28,7 @@
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
+        :class="{ 'transform rotate-90': isMobileMenuOpen }"
       >
         <path
           v-if="!isMobileMenuOpen"
@@ -53,15 +54,23 @@
       <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
         <div class="pt-5 pb-6 px-5 space-y-6">
           <div class="grid grid-cols-1 gap-4">
-            <a
-              v-for="item in menuItems"
-              :key="item.label"
-              :href="item.href"
-              class="text-base font-medium text-gray-900 hover:text-gray-700"
-              :target="item.external ? '_blank' : undefined"
-            >
-              {{ item.label }}
-            </a>
+            <a href="/about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">About</a>
+            <a href="/pricing" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Pricing</a>
+            <a href="/contact" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Contact</a>
+            <div>
+              <span class="block px-4 py-2 text-sm text-gray-700">Resources</span>
+              <div class="pl-4">
+                <a
+                  v-for="item in menuItems"
+                  :key="item.label"
+                  :href="item.href"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                  :target="item.external ? '_blank' : undefined"
+                >
+                  {{ item.label }}
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

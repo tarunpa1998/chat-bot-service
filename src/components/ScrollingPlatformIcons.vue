@@ -5,6 +5,8 @@
         <PlatformIcons :platform="platform" />
       </div>
     </div>
+    <ScrollReveal class="mt-16"> 
+      </ScrollReveal>
     <div class="scroll-row scroll-right" :class="{ 'paused': isPaused }">
       <div class="icon-container" v-for="platform in platformsRight" :key="platform">
         <PlatformIcons :platform="platform" />
