@@ -9,43 +9,8 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="bg-white rounded-lg shadow p-6">
-        <h2 class="text-xl font-semibold mb-4">Send us a message</h2>
-        <form @submit.prevent="submitForm" class="space-y-4">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-            <input
-              v-model="form.name"
-              type="text"
-              id="name"
-              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-            />
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <input
-              v-model="form.email"
-              type="email"
-              id="email"
-              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-            />
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-            <textarea
-              v-model="form.message"
-              id="message"
-              rows="4"
-              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-            ></textarea>
-          </div>
-          <CustomButton 
-            type="submit"
-            :full-width="true"
-            color="indigo"
-          >
-            Send Message
-          </CustomButton>
-        </form>
+        <h2 class="text-xl font-semibold mb-4">Contact US</h2>
+        <LiveChatDemo :showHeading="false" initialMessage="Hello! How can we assist you today?" />
       </div>
 
       <div class="bg-white rounded-lg shadow p-6">
@@ -74,25 +39,9 @@
 import { ref, onMounted } from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import CustomButton from '../components/CustomButton.vue';
+import LiveChatDemo from '../components/LiveChatDemo.vue'; 
 
 const mapContainer = ref<HTMLElement | null>(null);
-const form = ref({
-  name: '',
-  email: '',
-  message: ''
-});
-
-const submitForm = () => {
-  // Handle form submission
-  console.log('Form submitted:', form.value);
-  // Reset form
-  form.value = {
-    name: '',
-    email: '',
-    message: ''
-  };
-};
 
 onMounted(() => {
   if (mapContainer.value) {

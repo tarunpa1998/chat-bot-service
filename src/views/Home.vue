@@ -103,14 +103,20 @@ class="mx-auto md:mx-0 text-sm py-4 px-4 w-40"
 </ScrollReveal>
 
 
-    <ScrollReveal>
+<ScrollReveal>
       <div class="mt-16">
-        <h2 class="text-3xl font-bold text-center mb-8">Integrate Everywhere</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div v-for="platform in platforms" :key="platform" class="bg-white p-4 rounded-lg shadow text-center">
-            {{ platform }}
+        <h2 class="text-3xl font-bold text-center mb-8"><span class="text-black">Integrate</span> Everywhere</h2>
+        <ScrollReveal class="mt-20">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div
+              v-for="platform in platforms"
+              :key="platform"
+              class="bg-white p-4 rounded-lg shadow text-center"
+            >
+              <span :style="{ color: platformColors[platform] }">{{ platform }}</span>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </ScrollReveal>
 
@@ -125,15 +131,20 @@ class="mx-auto md:mx-0 text-sm py-4 px-4 w-40"
   </div>
 </ScrollReveal>
 
-    <ScrollReveal>
+<ScrollReveal>
       <div class="mt-16">
-        <h2 class="text-3xl font-bold text-center mb-8">And Many More Features...</h2>
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div v-for="(service, index) in services" :key="index" class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-semibold mb-2">{{ service.title }}</h3>
-            <p class="text-gray-600">{{ service.description }}</p>
+        <h2 class="text-3xl font-bold text-center mb-8">And Many More <span class="text-black">Features</span>...</h2>
+        <ScrollReveal class="mt-24">
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div v-for="(service, index) in services" :key="index" class="bg-white rounded-lg shadow-lg p-6">
+              <div class="flex items-center mb-4">
+                <font-awesome-icon :icon="['fas', service.icon]" class="text-3xl text-[#0b6f64] mr-4" />
+                <h3 class="text-xl font-semibold">{{ service.title }}</h3>
+              </div>
+              <p class="text-gray-600">{{ service.description }}</p>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </ScrollReveal>
 
@@ -167,21 +178,33 @@ import { ref } from 'vue';
 import InteractionTool from './InteractionTool.vue';
 import ScrollingPlatformIcons from '../components/ScrollingPlatformIcons.vue';
 import ScrollReveal from '../components/ScrollReveal.vue';
-import CustomButton from '../components/CustomButton.vue'; // Add this import
+import CustomButton from '../components/CustomButton.vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const services = ref([
-  { title: '24/7 Support', description: 'Get help anytime, anywhere with our AI-powered chatbot.' },
-  { title: 'Smart Solutions', description: 'Intelligent responses based on your specific needs and questions.' },
-  { title: 'Human Backup', description: 'Seamless escalation to human agents when needed.' }
+  { title: '24/7 Support', description: 'Get help anytime, anywhere with our AI-powered chatbot.', icon: 'headset' },
+  { title: 'Smart Solutions', description: 'Intelligent responses based on your specific needs and questions.', icon: 'brain' },
+  { title: 'Human Backup', description: 'Seamless escalation to human agents when needed.', icon: 'user-friends' }
 ]);
 
 const platforms = [
   'WordPress', 'Instagram', 'WhatsApp', 'Shopify', 'Facebook', 'Twitter', 'Slack', 'Discord'
 ];
 
+const platformColors = {
+  WordPress: '#21759b',
+  Instagram: '#e1306c',
+  WhatsApp: '#25d366',
+  Shopify: '#96bf48',
+  Facebook: '#3b5998',
+  Twitter: '#1da1f2',
+  Slack: '#4a154b',
+  Discord: '#7289da'
+};  
+
 const testimonials = ref([
-  { name: 'Sarah Johnson', position: 'CEO at TechCorp', comment: 'This chatbot has transformed our customer support. Response times are down 80%!' },
-  { name: 'Mike Chen', position: 'CTO at StartupX', comment: 'The AI capabilities are impressive. Setup was a breeze.' },
+  { name: 'John Doe', position: 'CEO at Company', comment: 'This service has transformed our customer support.' },
+  { name: 'Jane Smith', position: 'CTO at TechCorp', comment: 'The integration was seamless and the support is fantastic.' },
   { name: 'Emily Brown', position: 'Support Lead at ScaleUp', comment: 'Our team loves it. The automation has freed up so much time.' }
 ]);
 
@@ -190,7 +213,6 @@ const startChat = () => {
   // For now, it's just a placeholder
 };
 </script>
-
 <style scoped>
 :deep(.scrolling-platform-icons) {
   max-width: 100vw;

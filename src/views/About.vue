@@ -49,17 +49,17 @@ import ScrollReveal from '../components/ScrollReveal.vue';
 
 const team = ref([
   {
-    name: 'Mike Johnson',
+    name: 'Elif Toraman',
     position: 'Head of AI',
     order: 1
   },
   {
-    name: 'Jane Smith',
+    name: 'Tarun Patel',
     position: 'CTO',
     order: 2
   },
   {
-    name: 'John Doe',
+    name: 'Simran Gupta',
     position: 'CEO',
     order: 3
   }

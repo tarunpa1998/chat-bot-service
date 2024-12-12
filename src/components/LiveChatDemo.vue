@@ -1,6 +1,6 @@
 <template>
   <div class="form-section bg-none rounded-xl shadow-none overflow-hidden">
-    <h2 class="text-xl font-bold mb-4">Live Chat Demo</h2>
+    <h2 v-if="showHeading" class="text-xl font-bold mb-4">Live Chat Demo</h2>
     <div class="chat-messages mb-4" ref="chatContainer">
       <div v-for="(message, index) in messages" :key="index" class="mb-2 flex items-center" :class="message.type === 'bot' ? 'flex-row' : 'flex-row-reverse'">
         <img 
@@ -57,11 +57,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, nextTick } from 'vue';
+import { ref, reactive, nextTick, defineProps } from 'vue';
+
+const props = defineProps<{
+  showHeading: boolean;
+  initialMessage: string; // New prop for the initial message
+}>();
 
 const userInput = ref('');
 const messages = ref([
-  { type: 'bot', text: 'Hi there! Welcome to our live chat demo.' }
+  { type: 'bot', text: props.initialMessage || 'Hi there! Welcome to our live chat demo.' }
 ]);
 
 const steps = [
