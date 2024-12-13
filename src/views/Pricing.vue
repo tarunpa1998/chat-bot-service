@@ -20,6 +20,7 @@
             text="Start Free Trial" 
             hoverText="It's Free"
             class="fixed-width-button"
+            @click="navigateToAuth"
           />
         </div>
       </transition-group>
@@ -29,7 +30,14 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 import CustomButton from '../components/CustomButton.vue';
+
+const router = useRouter();
+
+const navigateToAuth = () => {
+  router.push('/auth');
+};
 
 const plans = [
   {

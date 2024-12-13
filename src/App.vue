@@ -6,7 +6,7 @@
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center">
             <router-link to="/" class="flex items-center">
-              <span class="text-xl font-bold text-indigo-600">AI Support</span>
+              <span class="text-xl font-bold text-primary-600">AI Support</span>
             </router-link>
           </div>
           <div class="flex-1 flex justify-center">
@@ -19,6 +19,7 @@
                 text="Create Chat Bot" 
                 hoverText="Start For Free"
                 class="fixed-width-button"
+                 @click="navigateToAuth"
               />
             </router-link>
           </div>
@@ -46,7 +47,13 @@ import NavigationMenu from './components/navigation/NavigationMenu.vue';
 import BreathingBackground from './components/BreathingBackground.vue';
 import Footer from './components/Footer.vue';
 import CustomButton from './components/CustomButton.vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
+
+const navigateToAuth = () => {
+  router.push('/auth');
+};
 const showChat = ref(true);
 </script>
 

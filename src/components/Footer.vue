@@ -30,7 +30,7 @@
           <CustomButton 
               text="Create Chat Bot" 
               hoverText="Start For Free"
-              @click="handleCreateChatBot"
+              @click="navigateToAuth"
           />
         </div>
       </div>
@@ -41,10 +41,16 @@
     </div>
   </footer>
 </template>
+
 <script setup lang="ts">
+
+import { useRouter } from 'vue-router';
 import CustomButton from './CustomButton.vue';
-const handleCreateBot = () => {
-  // Add logic for creating a bot here
-  console.log('Create Your Bot clicked');
+
+const router = useRouter();
+
+const navigateToAuth = () => {
+  router.push('/auth');
 };
+
 </script>

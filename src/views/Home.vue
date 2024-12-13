@@ -2,14 +2,14 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <ScrollReveal>
       <div class="text-center">
-       <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
-  <span class="text-[#0b6f64]">AI-Powered</span> Customer Support
-</h1>
+        <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
+          <span class="text-[#0b6f64]">AI-Powered</span> Customer Support
+        </h1>
         <p class="mt-3 max-w-md mx-auto text-base text-gray-600 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
           Our AI-Powered chatbot gives you powerful blocks to create unique chat experiences. Embed them anywhere on your web/mobile apps and start collecting results like magic.
         </p>
         <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-          <CustomButton @click="startChat">Start Chat</CustomButton>
+          <CustomButton @click="navigateToAuth">Start Chat</CustomButton>
         </div>
       </div>
     </ScrollReveal>
@@ -67,7 +67,8 @@
             
             text="Try it now" 
             hoverText="Get Started"
-class="mx-auto md:mx-0 text-sm py-4 px-4 w-40"
+             class="mx-auto md:mx-0 text-sm py-4 px-4 w-40"
+              @click="navigateToPricing"
           />
         </div>
       </div>
@@ -94,13 +95,17 @@ class="mx-auto md:mx-0 text-sm py-4 px-4 w-40"
           <CustomButton 
             text="Try it now" 
             hoverText="Get Started"
-class="mx-auto md:mx-0 text-sm py-4 px-4 w-40"
-          />
+            class="mx-auto md:mx-0 text-sm py-4 px-4 w-40"
+            @click="navigateToPricing"          
+            />
         </div>
       </div>
     </ScrollReveal>
   </div>
 </ScrollReveal>
+
+
+<div class="h-20"></div>
 
 
 <ScrollReveal>
@@ -175,11 +180,22 @@ class="mx-auto md:mx-0 text-sm py-4 px-4 w-40"
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import InteractionTool from './InteractionTool.vue';
 import ScrollingPlatformIcons from '../components/ScrollingPlatformIcons.vue';
 import ScrollReveal from '../components/ScrollReveal.vue';
 import CustomButton from '../components/CustomButton.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import Pricing from './views/Pricing.vue';
+
+const router = useRouter();
+const navigateToAuth = () => {
+  router.push('/auth');
+};
+const navigateToPricing = () => {
+  router.push('/pricing');
+};
+
 
 const services = ref([
   { title: '24/7 Support', description: 'Get help anytime, anywhere with our AI-powered chatbot.', icon: 'headset' },

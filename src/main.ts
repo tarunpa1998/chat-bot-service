@@ -16,10 +16,8 @@ import {
 import App from './App.vue';
 import './style.css';
 
-// Import ScrollReveal component
 import ScrollReveal from './components/ScrollReveal.vue';
 
-// Import AuthContainer component
 import AuthContainer from './views/AuthContainer.vue';
 
 // Routes
@@ -29,7 +27,7 @@ import Contact from './views/Contact.vue';
 import Resources from './views/Resources.vue';
 import Pricing from './views/Pricing.vue';
 
-// Add icons to library
+
 library.add(
   faWordpress,
   faInstagram,
