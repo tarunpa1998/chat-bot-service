@@ -92,7 +92,7 @@ project/
 ```
 
 
-## technologies-used
+## Technologies Used
 - **Vue.js:** The core framework for building the application.
 - **TypeScript:** Provides type safety and improved development experience.
 - **Vue Router:** Manages navigation and routing within the application.
@@ -125,7 +125,7 @@ To get started with this project, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-repository-url.git
+git clone https://github.com/tarunpa1998/chat-bot-service
 ```
 
 3. Navigate to the project directory:
