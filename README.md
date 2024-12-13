@@ -92,7 +92,7 @@ project/
 ```
 
 
-#technologies-used
+## technologies-used
 - **Vue.js:** The core framework for building the application.
 - **TypeScript:** Provides type safety and improved development experience.
 - **Vue Router:** Manages navigation and routing within the application.
