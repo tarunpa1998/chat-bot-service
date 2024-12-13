@@ -5,6 +5,7 @@
 - [Features](#features)
 - [Directory Structure](#directory-structure)
 - [Technologies Used](#technologies-used)
+- [Project Structure](#Project-Structure)
 - [Getting Started](#getting-started)
 - [Running the Project](#running-the-project)
 - [Building for Production](#building-for-production)
@@ -25,6 +26,14 @@ AI Customer Support is a Vue.js application designed to provide intelligent cust
 - Responsive design
 - Custom components (ChatWidget, CustomButton, NavigationMenu)
 - Global and component-specific styling
+
+- **Interactive Chat Interface:** Users can interact with an AI chatbot for support and information.
+- **Platform Integration:** Supports integration with various platforms like WordPress, Instagram, WhatsApp, and more.
+- **Dynamic Navigation:** A responsive navigation menu with hover effects and submenus.
+- **Customizable Components:** Includes reusable components like buttons, icons, and chat elements.
+- **Scroll Animations:** Elements are revealed with smooth animations as users scroll through the page.
+- **Responsive Design:** Ensures a consistent experience across different devices and screen sizes.
+
 
 ## Directory Structure
 
@@ -82,15 +91,29 @@ project/
 └── vite.config.ts
 ```
 
-## Technologies Used
-- Vue.js 3
-- Vue Router
-- Pinia
-- Axios
-- Leaflet
-- TypeScript
-- Tailwind CSS
-- Vite
+- **Vue.js:** The core framework for building the application.
+- **TypeScript:** Provides type safety and improved development experience.
+- **Vue Router:** Manages navigation and routing within the application.
+- **Pinia:** State management library for handling global state.
+- **Axios:** HTTP client for making API requests.
+- **Leaflet:** Used for interactive maps and geolocation features.
+- **FontAwesome:** Icon library for displaying platform-specific icons.
+- **Tailwind CSS:** Utility-first CSS framework for styling the application.
+- **Vite:** Build tool for fast development and optimized production builds.
+
+
+## Project Structure
+
+- **src/components:** Contains reusable Vue components for chat, navigation, and more.
+- **src/views:** Includes different views/pages like Home, About, Contact, and Pricing.
+- **public:** Holds static assets like images and videos.
+- **index.html:** The main HTML file setting up the Vue app.
+- **main.ts:** Initializes the Vue app and imports global dependencies.
+- **global_styles.css & styles.css:** CSS files for styling the application.
+- **tailwind.config.js:** Configuration for Tailwind CSS.
+- **package.json:** Contains project metadata, scripts, and dependencies.
+- **vite.config.ts:** Configuration for Vite.
+
 
 ## Getting Started
 To get started with this project, follow these steps:
