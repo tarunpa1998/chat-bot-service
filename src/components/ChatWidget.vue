@@ -2,8 +2,8 @@
   <div class="fixed bottom-4 right-4 z-50">
     <Transition name="slide">
       <div v-if="isOpen" class="bg-white rounded-lg shadow-xl w-96 h-[500px] flex flex-col">
-        <div class="p-4 bg-indigo-600 text-white rounded-t-lg flex justify-between items-center">
-          <h3 class="font-semibold">Customer Support</h3>
+        <div class="p-4 bg-black text-white rounded-t-lg flex justify-between items-center">
+          <h3 class="font-semibold"><span class="text-white">Customer Support</span></h3>
           <button @click="toggleChat" class="text-white hover:text-gray-200 transition-colors duration-200">
             <span class="sr-only">Close chat</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -31,7 +31,7 @@
             />
             <button
               type="submit"
-              class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-200"
+              class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-black transition-colors duration-200"
             >
               Send
             </button>
@@ -43,7 +43,7 @@
     <button
       v-if="!isOpen"
       @click="toggleChat"
-      class="bg-indigo-600 text-white p-4 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-200"
+      class="bg-primary-500 text-white p-4 rounded-full shadow-lg hover:bg-gray-300 transition-colors duration-200"
     >
       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />

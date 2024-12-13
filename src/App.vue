@@ -13,13 +13,14 @@
             <NavigationMenu />
           </div>
           <div class="flex items-center space-x-4">
-            <router-link to="/login" class="sign-in-button">Sign In</router-link>
-            <CustomButton 
-              text="Create Chat Bot" 
-              hoverText="Start For Free"
-              @click="handleCreateChatBot"
-              class="fixed-width-button"
-            />
+            <router-link to="/auth" class="sign-in-button">Sign In</router-link>
+            <router-link to="/auth">
+              <CustomButton 
+                text="Create Chat Bot" 
+                hoverText="Start For Free"
+                class="fixed-width-button"
+              />
+            </router-link>
           </div>
         </div>
       </div>
@@ -47,10 +48,6 @@ import Footer from './components/Footer.vue';
 import CustomButton from './components/CustomButton.vue';
 
 const showChat = ref(true);
-
-const handleCreateChatBot = () => {
-  console.log('Create Chat Bot clicked');
-};
 </script>
 
 <style>

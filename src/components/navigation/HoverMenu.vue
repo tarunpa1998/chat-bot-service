@@ -42,19 +42,19 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 
-// Define component props
+
 const props = defineProps<{
   title: string;
   href?: string; // External link
   to?: string; // Vue Router link
 }>();
 
-// Computed properties
+
 const hasSubmenu = computed(() => !props.href && !props.to);
 const isExternalLink = computed(() => !!props.href);
 const linkType = computed(() => (props.href ? 'a' : props.to ? 'router-link' : 'button'));
 
-// Reactive state
+
 const isOpen = ref(false);
 let closeTimeout: ReturnType<typeof setTimeout> | null = null;
 

@@ -19,6 +19,9 @@ import './style.css';
 // Import ScrollReveal component
 import ScrollReveal from './components/ScrollReveal.vue';
 
+// Import AuthContainer component
+import AuthContainer from './views/AuthContainer.vue';
+
 // Routes
 import Home from './views/Home.vue';
 import About from './views/About.vue';
@@ -47,7 +50,8 @@ const router = createRouter({
     { path: '/resources', name: 'resources', component: Resources },
     { path: '/resources/blog', name: 'blog', component: Resources },
     { path: '/resources/docs', name: 'docs', component: Resources },
-    { path: '/resources/community', name: 'community', component: Resources }
+    { path: '/resources/community', name: 'community', component: Resources },
+    { path: '/auth', name: 'auth', component: AuthContainer } // New route for AuthContainer
   ]
 });
 
