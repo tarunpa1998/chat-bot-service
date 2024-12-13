@@ -74,7 +74,13 @@ const plans = [
   }
 ];
 
-const visiblePlans = ref([]);
+interface Plan {
+  name: string;
+  price: number;
+  features: string[];
+}
+
+const visiblePlans = ref<Plan[]>([]);
 
 onMounted(() => {
   plans.forEach((plan, index) => {

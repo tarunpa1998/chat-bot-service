@@ -59,13 +59,19 @@ const showChat = ref(true);
 
 <style>
 .nav-link {
-  @apply inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900 border-b-2 border-transparent transition-colors duration-200;
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0.25rem; 
+  padding-right: 0.25rem; 
+  padding-top: 0.25rem; 
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  color: #6b7280; 
+  border-bottom-width: 2px; 
+  border-color: transparent; 
+  transition-property: color, border-color; 
+  transition-duration: 200ms;
 }
-
-.router-link-active {
-  @apply border-indigo-500 text-gray-900;
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.15s ease;
@@ -77,7 +83,14 @@ const showChat = ref(true);
 }
 
 .sign-in-button {
-  @apply text-gray-600 px-4 py-2 rounded-md transition-colors duration-200;
+  color: #0d9488; 
+  padding-left: 1rem; 
+  padding-right: 1rem; 
+  padding-top: 0.5rem; 
+  padding-bottom: 0.5rem; 
+  border-radius: 0.375rem; 
+  transition-property: color, background-color;
+  transition-duration: 200ms; 
 }
 
 .sign-in-button:hover {

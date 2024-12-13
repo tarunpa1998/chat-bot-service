@@ -118,7 +118,7 @@
               :key="platform"
               class="bg-white p-4 rounded-lg shadow text-center"
             >
-              <span :style="{ color: platformColors[platform] }">{{ platform }}</span>
+              <span :style="{ color: platformColors[platform as keyof typeof platformColors] }">{{ platform }}</span>
             </div>
           </div>
         </ScrollReveal>
@@ -203,7 +203,7 @@ const services = ref([
   { title: 'Human Backup', description: 'Seamless escalation to human agents when needed.', icon: 'user-friends' }
 ]);
 
-const platforms = [
+const platforms: (keyof typeof platformColors)[] = [
   'WordPress', 'Instagram', 'WhatsApp', 'Shopify', 'Facebook', 'Twitter', 'Slack', 'Discord'
 ];
 
